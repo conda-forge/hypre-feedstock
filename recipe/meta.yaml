@@ -13,18 +13,18 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
     - {{ mpi }}
-    - openblas 0.2.19
+    - openblas 0.2.20
     - cmake
     - toolchain
   run:
     - {{ mpi }}
-    - openblas 0.2.19
+    - openblas 0.2.20
 
 test:
   commands:
