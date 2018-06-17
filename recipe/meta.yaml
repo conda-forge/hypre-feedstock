@@ -1,7 +1,6 @@
 {% set name = "hypre" %}
 {% set version = "2.14.0" %}
 {% set sha256 = "10cfcd555618137c194958f84f44724fece45b58c59002d1195fed354e2ca16c" %}
-{% set mpi = 'mpich' %}
 
 package:
   name: {{ name }}
@@ -13,24 +12,26 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
-    - {{ mpi }}
-    - openblas 0.2.20
-    - cmake
     - toolchain
-  run:
+    - cmake
+    - openblas 0.2.20|0.2.20.*
     - {{ mpi }}
-    - openblas 0.2.20
+  run:
+    - openblas 0.2.20|0.2.20.*
+    - {{ mpi }}
 
 test:
   commands:
-    - test -f $PREFIX/lib/libHYPRE.dylib  # [osx]
-    - test -f $PREFIX/lib/libHYPRE.so  # [linux]
+    - conda inspect objects  hypre  # [osx]
+    - conda inspect linkages hypre  # [not win]
     - test -f $PREFIX/include/HYPRE.h
+    - test -f $PREFIX/lib/libHYPRE.dylib  # [osx]
+    - test -f $PREFIX/lib/libHYPRE.so     # [linux]
 
 about:
   home: http://www.llnl.gov/casc/hypre/
@@ -46,4 +47,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - dalcinl
     - minrk
