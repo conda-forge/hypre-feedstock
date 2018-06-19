@@ -1,6 +1,9 @@
 # explicitly link mpi, openblas
 export LDFLAGS="-L$PREFIX/lib -lmpi -lopenblas $LDFLAGS"
 
+export CC=mpicc
+export CXX=mpicxx
+
 cd src/cmbuild
 cmake \
     -DHYPRE_SHARED=ON \
@@ -10,5 +13,5 @@ cmake \
     -DHYPRE_INSTALL_PREFIX="$PREFIX" \
     ..
 
-make -j${NUM_CPUS}
+make -j${CPU_COUNT}
 make install
