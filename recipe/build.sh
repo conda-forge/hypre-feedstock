@@ -1,6 +1,9 @@
 # explicitly link mpi, openblas
 export LDFLAGS="-L$PREFIX/lib -lmpi -lopenblas $LDFLAGS"
 
+export CC=mpicc
+export CXX=mpicxx
+
 cd src/cmbuild
 cmake \
     -DHYPRE_SHARED=ON \
