@@ -17,12 +17,15 @@ build:
 
 requirements:
   build:
-    - toolchain
     - cmake
-    - openblas 0.2.20|0.2.20.*
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - openblas
     - {{ mpi }}
   run:
-    - openblas 0.2.20|0.2.20.*
+    - openblas
     - {{ mpi }}
 
 test:
