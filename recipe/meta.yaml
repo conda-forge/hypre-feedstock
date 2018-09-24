@@ -1,6 +1,6 @@
 {% set name = "hypre" %}
-{% set version = "2.14.0" %}
-{% set sha256 = "10cfcd555618137c194958f84f44724fece45b58c59002d1195fed354e2ca16c" %}
+{% set version = "2.15.0" %}
+{% set sha256 = "07cad10bb328d1a7d40057c25469354e2945e534a8520604f10fa9fbb6afef94" %}
 
 package:
   name: {{ name }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
