@@ -1,3 +1,5 @@
+build_number_decrement:
+- '1000'
 c_compiler:
 - toolchain_c
 channel_sources:
@@ -9,9 +11,16 @@ cxx_compiler:
 docker_image:
 - condaforge/linux-anvil
 mpi:
-- mpich
+- openmpi
 openblas:
 - 0.2.20
 pin_run_as_build:
   openblas:
     max_pin: x.x.x
+zip_keys:
+- - c_compiler
+  - cxx_compiler
+  - channel_sources
+  - channel_targets
+  - docker_image
+  - build_number_decrement
