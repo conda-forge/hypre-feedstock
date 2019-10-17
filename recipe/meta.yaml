@@ -2,6 +2,8 @@
 {% set version = "2.15.1" %}
 {% set sha256 = "58d215146e1c7c2c11be4cb1eac0d1663a45584efbe5f603205d8c4766b7579f" %}
 
+{% set mpi = mpi or 'mpich' %}
+
 package:
   name: {{ name }}
   version: {{ version }}
@@ -33,7 +35,7 @@ test:
     - conda inspect linkages hypre  # [not win]
     - test -f $PREFIX/include/HYPRE.h
     - test -f $PREFIX/lib/libHYPRE.dylib  # [osx]
-    - test -f $PREFIX/lib/libHYPRE.so     # [linux]
+    - test -f $PREFIX/lib/libHYPRE.so  # [linux]
 
 about:
   home: http://www.llnl.gov/casc/hypre/
@@ -51,3 +53,5 @@ extra:
   recipe-maintainers:
     - dalcinl
     - minrk
+    - davidbrochart
+    - SylvainCorlay
