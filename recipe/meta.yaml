@@ -1,6 +1,6 @@
 {% set name = "hypre" %}
-{% set version = "2.15.1" %}
-{% set sha256 = "58d215146e1c7c2c11be4cb1eac0d1663a45584efbe5f603205d8c4766b7579f" %}
+{% set version = "2.18.2" %}
+{% set sha256 = "28007b5b584eaf9397f933032d8367788707a2d356d78e47b99e551ab10cc76a" %}
 
 {% set mpi = mpi or 'mpich' %}
 
@@ -10,11 +10,11 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/LLNL/{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://github.com/hypre-space/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1004
+  number: 0
   skip: true  # [win]
 
 requirements:
