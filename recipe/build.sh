@@ -1,5 +1,5 @@
-# explicitly link mpi, openblas
-export LDFLAGS="-L$PREFIX/lib -lmpi -llapack -lblas $LDFLAGS"
+# explicitly link openblas
+export LDFLAGS="-L$PREFIX/lib -llapack -lblas $LDFLAGS"
 
 export CC=mpicc
 export CXX=mpicxx
