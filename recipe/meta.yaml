@@ -40,8 +40,8 @@ test:
 
 about:
   home: http://www.llnl.gov/casc/hypre/
-  license: LGPL-2.1
-  license_family: LGPL
+  license: Apache-2.0
+  license_family: Apache
   license_file: COPYRIGHT
   summary: 'high performance preconditioners for sparse linear systems'
   description: |
