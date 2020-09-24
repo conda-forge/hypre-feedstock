@@ -17,4 +17,6 @@ libblas:
 liblapack:
 - 3.8.0 *netlib
 mpi:
-- openmpi
+- mpich
+target_platform:
+- linux-64

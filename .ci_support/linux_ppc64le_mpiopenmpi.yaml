@@ -18,3 +18,5 @@ liblapack:
 - 3.8.0 *netlib
 mpi:
 - openmpi
+target_platform:
+- linux-ppc64le
