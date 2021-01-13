@@ -14,7 +14,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
@@ -32,8 +32,6 @@ requirements:
 
 test:
   commands:
-    - conda inspect objects  hypre  # [osx]
-    - conda inspect linkages hypre  # [not win]
     - test -f $PREFIX/include/HYPRE.h
     - test -f $PREFIX/lib/libHYPRE.dylib  # [osx]
     - test -f $PREFIX/lib/libHYPRE.so  # [linux]
