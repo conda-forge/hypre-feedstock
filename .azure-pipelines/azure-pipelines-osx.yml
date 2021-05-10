@@ -14,7 +14,6 @@ jobs:
       osx_64_mpiopenmpi:
         CONFIG: osx_64_mpiopenmpi
         UPLOAD_PACKAGES: 'True'
-    maxParallel: 8
   timeoutInMinutes: 360
 
   steps:
