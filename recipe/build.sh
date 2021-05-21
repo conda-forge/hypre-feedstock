@@ -2,11 +2,8 @@
 
 set -x
 
-# explicitly link mpi, openblas
-# export LDFLAGS="-L$PREFIX/lib -lmpi -llapack -lblas $LDFLAGS"
-
-export CC=mpicc
-export CXX=mpicxx
+export CC=$PREFIX/bin/mpicc
+export CXX=$PREFIX/bin/mpic++
 
 cd src/cmbuild
 cmake ${CMAKE_ARGS} \
