@@ -7,6 +7,7 @@ export CXX=mpicxx
 cd src/cmbuild
 cmake ${CMAKE_ARGS} \
     -DHYPRE_SHARED=ON \
+    -DBUILD_SHARED_LIBS=ON \
     -DHYPRE_USING_HYPRE_BLAS=OFF \
     -DHYPRE_USING_HYPRE_LAPACK=OFF \
     -DHYPRE_USING_FEI=OFF \
