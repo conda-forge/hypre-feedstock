@@ -2,6 +2,8 @@
 
 set -x
 
+set +o errexit
+
 if [[ "$mpi" == "openmpi" ]]; then
     export CC=mpicc
     export CXX=mpic++
@@ -16,6 +18,8 @@ cmake ${CMAKE_ARGS} \
     -DHYPRE_USING_FEI=OFF \
     -DHYPRE_INSTALL_PREFIX="$PREFIX" \
     ..
+
+cat CMakeFiles/CMakeError.log
 
 make -j${CPU_COUNT}
 make install
