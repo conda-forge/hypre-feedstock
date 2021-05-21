@@ -1,3 +1,9 @@
+#!/bin/bash
+
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/gnuconfig/config.* .
+set -x
+
 # explicitly link mpi, openblas
 export LDFLAGS="-L$PREFIX/lib -lmpi -llapack -lblas $LDFLAGS"
 
