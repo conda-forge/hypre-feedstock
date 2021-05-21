@@ -5,7 +5,7 @@ export CC=mpicc
 export CXX=mpicxx
 
 cd src/cmbuild
-cmake \
+cmake ${CMAKE_ARGS} \
     -DHYPRE_SHARED=ON \
     -DHYPRE_USING_HYPRE_BLAS=OFF \
     -DHYPRE_USING_HYPRE_LAPACK=OFF \

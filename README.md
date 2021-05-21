@@ -5,9 +5,11 @@ Home: http://www.llnl.gov/casc/hypre/
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hypre-feedstock/blob/master/LICENSE.txt)
 
 Summary: high performance preconditioners for sparse linear systems
+
+Development: https://github.com/LLNL/hypre
 
 HYPRE is a library of high performance preconditioners and solvers featuring
 multigrid methods for the solution of large, sparse linear systems of equations
@@ -19,17 +21,10 @@ Current build status
 
 
 <table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://travis-ci.com/conda-forge/hypre-feedstock">
-        <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/hypre-feedstock/master.svg?label=macOS">
-      </a>
-    </td>
-  </tr><tr>
     <td>Drone</td>
     <td>
       <a href="https://cloud.drone.io/conda-forge/hypre-feedstock">
-        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/master.svg?label=Linux">
+        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/hypre-feedstock/master.svg?label=Linux">
       </a>
     </td>
   </tr>
@@ -46,6 +41,20 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
+              <td>linux_64_mpimpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=435&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hypre-feedstock?branchName=master&jobName=linux&configuration=linux_64_mpimpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_mpiopenmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=435&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hypre-feedstock?branchName=master&jobName=linux&configuration=linux_64_mpiopenmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>linux_aarch64_mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=435&branchName=master">
@@ -57,20 +66,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=435&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hypre-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mpiopenmpi" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_mpimpich</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=435&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hypre-feedstock?branchName=master&jobName=linux&configuration=linux_mpimpich" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_mpiopenmpi</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=435&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hypre-feedstock?branchName=master&jobName=linux&configuration=linux_mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -88,29 +83,37 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_mpimpich</td>
+              <td>osx_64_mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=435&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hypre-feedstock?branchName=master&jobName=osx&configuration=osx_mpimpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hypre-feedstock?branchName=master&jobName=osx&configuration=osx_64_mpimpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_mpiopenmpi</td>
+              <td>osx_64_mpiopenmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=435&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hypre-feedstock?branchName=master&jobName=osx&configuration=osx_mpiopenmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hypre-feedstock?branchName=master&jobName=osx&configuration=osx_64_mpiopenmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mpimpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=435&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hypre-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_mpimpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mpiopenmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=435&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hypre-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr>
           </tbody>
         </table>
       </details>
-    </td>
-  </tr>
-  <tr>
-    <td>Windows</td>
-    <td>
-      <img src="https://img.shields.io/badge/Windows-disabled-lightgrey.svg" alt="Windows disabled">
     </td>
   </tr>
 </table>
@@ -129,6 +132,7 @@ Installing `hypre` from the `conda-forge` channel can be achieved by adding `con
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `hypre` can be installed with:
@@ -199,9 +203,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
