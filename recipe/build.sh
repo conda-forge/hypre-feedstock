@@ -2,8 +2,10 @@
 
 set -x
 
-export CC=$PREFIX/bin/mpicc
-export CXX=$PREFIX/bin/mpic++
+if [[ "$mpi" == "openmpi" ]]; then
+    export CC=mpicc
+    export CXX=mpic++
+fi
 
 cd src/cmbuild
 cmake ${CMAKE_ARGS} \
