@@ -5,8 +5,8 @@ set -x
 set +o errexit
 
 if [[ "$mpi" == "openmpi" ]]; then
-    export CC=mpicc
-    export CXX=mpic++
+    export CC=$PREFIX/bin/mpicc
+    export CXX=$PREFIX/bin/mpic++
 fi
 
 cd src/cmbuild
