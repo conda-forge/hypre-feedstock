@@ -2,11 +2,8 @@
 
 set -x
 
-set +o errexit
-
-
-
-export LDFLAGS="-L$PREFIX/lib -lmpi -llapack -lblas $LDFLAGS"
+# Workaround for linux-ppc64le_mpich build
+export LDFLAGS="-L$PREFIX/lib -lmpi $LDFLAGS"
 
 if [[ "$mpi" == "openmpi" ]]; then
     export OPAL_PREFIX=$PREFIX
@@ -23,8 +20,6 @@ cmake ${CMAKE_ARGS} \
     -DHYPRE_USING_FEI=OFF \
     -DHYPRE_INSTALL_PREFIX="$PREFIX" \
     ..
-
-cat CMakeFiles/CMakeError.log
 
 make -j${CPU_COUNT}
 make install
