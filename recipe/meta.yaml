@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - cmake
+    - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
@@ -32,8 +33,6 @@ requirements:
 
 test:
   commands:
-    - conda inspect objects  hypre  # [osx]
-    - conda inspect linkages hypre  # [not win]
     - test -f $PREFIX/include/HYPRE.h
     - test -f $PREFIX/lib/libHYPRE.dylib  # [osx]
     - test -f $PREFIX/lib/libHYPRE.so  # [linux]
