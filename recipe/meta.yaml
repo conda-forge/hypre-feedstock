@@ -1,6 +1,6 @@
 {% set name = "hypre" %}
-{% set version = "2.18.2" %}
-{% set sha256 = "28007b5b584eaf9397f933032d8367788707a2d356d78e47b99e551ab10cc76a" %}
+{% set version = "2.21.0" %}
+{% set sha256 = "e380f914fe7efe22afc44cdf553255410dc8a02a15b2e5ebd279ba88817feaf5" %}
 
 {% set mpi = mpi or 'mpich' %}
 
@@ -14,7 +14,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -32,8 +32,6 @@ requirements:
 
 test:
   commands:
-    - conda inspect objects  hypre  # [osx]
-    - conda inspect linkages hypre  # [not win]
     - test -f $PREFIX/include/HYPRE.h
     - test -f $PREFIX/lib/libHYPRE.dylib  # [osx]
     - test -f $PREFIX/lib/libHYPRE.so  # [linux]
@@ -43,7 +41,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: COPYRIGHT
-  summary: 'high performance preconditioners for sparse linear systems'
+  summary: high performance preconditioners for sparse linear systems
   description: |
     HYPRE is a library of high performance preconditioners and solvers featuring
     multigrid methods for the solution of large, sparse linear systems of equations
