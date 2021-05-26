@@ -23,7 +23,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make
-    - {{ mpi }}  # [build_platform != target_platform]
+    - {{ mpi }}  # [build_platform != target_platform and mpi == "openmpi"]
   host:
     - libblas
     - liblapack
