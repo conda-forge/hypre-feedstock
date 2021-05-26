@@ -16,7 +16,7 @@ cmake ${CMAKE_ARGS} \
     -DHYPRE_USING_HYPRE_LAPACK=OFF \
     -DHYPRE_USING_FEI=OFF \
     -DHYPRE_INSTALL_PREFIX="$PREFIX" \
-    ..
+    .. || { cat CMakeFiles/CMakeError.log; exit 1; }
 
 make -j${CPU_COUNT}
 make install
