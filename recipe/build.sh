@@ -2,9 +2,6 @@
 
 set -x
 
-# Workaround for linux-ppc64le_mpich build
-export LDFLAGS="-L$PREFIX/lib -lmpi $LDFLAGS"
-
 if [[ "$mpi" == "openmpi" ]]; then
     export OPAL_PREFIX=$PREFIX
     export CC=mpicc
