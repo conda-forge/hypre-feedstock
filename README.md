@@ -214,5 +214,6 @@ Feedstock Maintainers
 * [@SylvainCorlay](https://github.com/SylvainCorlay/)
 * [@dalcinl](https://github.com/dalcinl/)
 * [@davidbrochart](https://github.com/davidbrochart/)
+* [@matthiasdiener](https://github.com/matthiasdiener/)
 * [@minrk](https://github.com/minrk/)
 
