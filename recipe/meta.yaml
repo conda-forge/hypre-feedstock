@@ -1,6 +1,7 @@
 {% set name = "hypre" %}
 {% set version = "2.21.0" %}
 {% set sha256 = "e380f914fe7efe22afc44cdf553255410dc8a02a15b2e5ebd279ba88817feaf5" %}
+{% set build = "1" %}
 
 {% set mpi = mpi or 'mpich' %}
 
@@ -14,7 +15,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: {{ build }}
   skip: true  # [win]
   {% set mpi_prefix = "mpi_" + mpi %}
   string: "{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}"
