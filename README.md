@@ -1,7 +1,7 @@
 About hypre
 ===========
 
-Home: http://www.llnl.gov/casc/hypre/
+Home: https://www.llnl.gov/casc/hypre/
 
 Package license: Apache-2.0
 
@@ -10,6 +10,8 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hypre-feedstock
 Summary: high performance preconditioners for sparse linear systems
 
 Development: https://github.com/LLNL/hypre
+
+Documentation: https://hypre.readthedocs.io/en/latest/
 
 HYPRE is a library of high performance preconditioners and solvers featuring
 multigrid methods for the solution of large, sparse linear systems of equations
