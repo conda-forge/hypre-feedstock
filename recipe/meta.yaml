@@ -1,6 +1,7 @@
 {% set name = "hypre" %}
 {% set version = "2.21.0" %}
 {% set sha256 = "e380f914fe7efe22afc44cdf553255410dc8a02a15b2e5ebd279ba88817feaf5" %}
+{% set build = "2" %}
 
 {% set mpi = mpi or 'mpich' %}
 
@@ -14,8 +15,10 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: {{ build }}
   skip: true  # [win]
+  {% set mpi_prefix = "mpi_" + mpi %}
+  string: "{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}"
 
 requirements:
   build:
@@ -40,7 +43,7 @@ test:
     - test -f $PREFIX/lib/libHYPRE.so  # [linux]
 
 about:
-  home: http://www.llnl.gov/casc/hypre/
+  home: https://www.llnl.gov/casc/hypre/
   license: Apache-2.0
   license_family: Apache
   license_file: COPYRIGHT
@@ -50,6 +53,7 @@ about:
     multigrid methods for the solution of large, sparse linear systems of equations
     on massively parallel computers.
   dev_url: https://github.com/LLNL/hypre
+  doc_url: https://hypre.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
