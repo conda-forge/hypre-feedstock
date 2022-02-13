@@ -213,6 +213,3 @@ Feedstock Maintainers
 * [@matthiasdiener](https://github.com/matthiasdiener/)
 * [@minrk](https://github.com/minrk/)
 
-
-<!-- dummy commit to enable rerendering -->
-
