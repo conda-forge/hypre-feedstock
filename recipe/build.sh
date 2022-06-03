@@ -2,8 +2,8 @@
 
 set -x
 
-# explicitly link mpi, openblas
-export LDFLAGS="-L$PREFIX/lib -lmpi -llapack -lblas $LDFLAGS"
+# explicitly link blas, lapack
+export LDFLAGS="-L$PREFIX/lib -llapack -lblas $LDFLAGS"
 
 if [[ "$mpi" == "openmpi" ]]; then
     export OPAL_PREFIX=$PREFIX
