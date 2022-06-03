@@ -1,6 +1,7 @@
 {% set name = "hypre" %}
-{% set version = "2.18.2" %}
-{% set sha256 = "28007b5b584eaf9397f933032d8367788707a2d356d78e47b99e551ab10cc76a" %}
+{% set version = "2.24.0" %}
+{% set sha256 = "f480e61fc25bf533fc201fdf79ec440be79bb8117650627d1f25151e8be2fdb5" %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
 
@@ -14,14 +15,18 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: {{ build }}
   skip: true  # [win]
+  {% set mpi_prefix = "mpi_" + mpi %}
+  string: {{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}
 
 requirements:
   build:
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - make
+    - {{ mpi }}  # [build_platform != target_platform and mpi == "openmpi"]
   host:
     - libblas
     - liblapack
@@ -31,23 +36,22 @@ requirements:
 
 test:
   commands:
-    - conda inspect objects  hypre  # [osx]
-    - conda inspect linkages hypre  # [not win]
     - test -f $PREFIX/include/HYPRE.h
     - test -f $PREFIX/lib/libHYPRE.dylib  # [osx]
     - test -f $PREFIX/lib/libHYPRE.so  # [linux]
 
 about:
-  home: http://www.llnl.gov/casc/hypre/
-  license: LGPL-2.1
-  license_family: LGPL
+  home: https://www.llnl.gov/casc/hypre/
+  license: Apache-2.0
+  license_family: Apache
   license_file: COPYRIGHT
-  summary: 'high performance preconditioners for sparse linear systems'
+  summary: high performance preconditioners for sparse linear systems
   description: |
     HYPRE is a library of high performance preconditioners and solvers featuring
     multigrid methods for the solution of large, sparse linear systems of equations
     on massively parallel computers.
   dev_url: https://github.com/LLNL/hypre
+  doc_url: https://hypre.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
@@ -55,3 +59,4 @@ extra:
     - minrk
     - davidbrochart
     - SylvainCorlay
+    - matthiasdiener
