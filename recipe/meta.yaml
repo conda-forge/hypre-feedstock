@@ -1,7 +1,7 @@
 {% set name = "hypre" %}
-{% set version = "2.24.0" %}
-{% set sha256 = "f480e61fc25bf533fc201fdf79ec440be79bb8117650627d1f25151e8be2fdb5" %}
-{% set build = 1 %}
+{% set version = "2.25.0" %}
+{% set sha256 = "f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c" %}
+{% set build = 0 %}
 
 {% set mpi = mpi or 'mpich' %}
 
@@ -50,8 +50,8 @@ about:
     HYPRE is a library of high performance preconditioners and solvers featuring
     multigrid methods for the solution of large, sparse linear systems of equations
     on massively parallel computers.
-  dev_url: https://github.com/LLNL/hypre
-  doc_url: https://hypre.readthedocs.io/en/latest/
+  dev_url: https://github.com/hypre-space/hypre
+  doc_url: https://hypre.readthedocs.io
 
 extra:
   recipe-maintainers:
