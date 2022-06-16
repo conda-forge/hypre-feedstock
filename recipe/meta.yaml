@@ -50,8 +50,8 @@ about:
     HYPRE is a library of high performance preconditioners and solvers featuring
     multigrid methods for the solution of large, sparse linear systems of equations
     on massively parallel computers.
-  dev_url: https://github.com/LLNL/hypre
-  doc_url: https://hypre.readthedocs.io/en/latest/
+  dev_url: https://github.com/hypre-space/hypre
+  doc_url: https://hypre.readthedocs.io
 
 extra:
   recipe-maintainers:
