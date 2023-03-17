@@ -1,11 +1,11 @@
-About hypre
-===========
+About hypre-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hypre-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.llnl.gov/casc/hypre/
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hypre-feedstock/blob/main/LICENSE.txt)
 
 Summary: high performance preconditioners for sparse linear systems
 
