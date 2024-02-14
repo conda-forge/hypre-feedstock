@@ -1,6 +1,6 @@
 {% set name = "hypre" %}
-{% set version = "2.30.0" %}
-{% set sha256 = "8e2af97d9a25bf44801c6427779f823ebc6f306438066bba7fcbc2a5f9b78421" %}
+{% set version = "2.31.0" %}
+{% set sha256 = "9a7916e2ac6615399de5010eb39c604417bb3ea3109ac90e199c5c63b0cb4334" %}
 {% set build = 0 %}
 
 {% set mpi = mpi or 'mpich' %}
