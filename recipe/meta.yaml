@@ -1,7 +1,7 @@
 {% set name = "hypre" %}
 {% set version = "2.32.0" %}
 {% set sha256 = "2277b6f01de4a7d0b01cfe12615255d9640eaa02268565a7ce1a769beab25fa1" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
 
@@ -19,6 +19,8 @@ build:
   skip: true  # [win]
   {% set mpi_prefix = "mpi_" + mpi %}
   string: {{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}
+  run_exports:
+    - {{ pin_subpackage("hypre", max_pin="x.x") }}
 
 requirements:
   build:
