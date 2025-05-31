@@ -13,6 +13,11 @@ package:
 source:
   url: https://github.com/hypre-space/${{ name }}/archive/v${{ version }}.tar.gz
   sha256: ${{ sha256 }}
+  patches:
+    # put hypre headers in include/hypre
+    # matches debian: https://sources.debian.org/src/hypre/2.32.0-4/debian/patches/configure.patch/
+    # see https://github.com/hypre-space/hypre/issues/898 for reason
+    - include-hypre.patch
 
 build:
   number: ${{ build }}
@@ -39,7 +44,7 @@ tests:
       lib:
         - HYPRE
       include:
-        - HYPRE.h
+        - hypre/HYPRE.h
 
 about:
   license: Apache-2.0
