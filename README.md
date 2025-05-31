@@ -11,12 +11,11 @@ Summary: high performance preconditioners for sparse linear systems
 
 Development: https://github.com/hypre-space/hypre
 
-Documentation: https://hypre.readthedocs.io
+Documentation: https://hypre.readthedocs.io/
 
 HYPRE is a library of high performance preconditioners and solvers featuring
 multigrid methods for the solution of large, sparse linear systems of equations
 on massively parallel computers.
-
 
 Current build status
 ====================
