@@ -39,7 +39,7 @@ tests:
       lib:
         - HYPRE
       include:
-        - hypre/HYPRE.h
+        - HYPRE.h
 
 about:
   license: Apache-2.0
