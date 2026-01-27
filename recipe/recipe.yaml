@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: hypre
-  version: 2.33.0
-  sha256: 0f9103c34bce7a5dcbdb79a502720fc8aab4db9fd0146e0791cde7ec878f27da
+  version: 3.1.0
+  sha256: a6879ae9375d95c26afd97141d61e7a8092807333bf40cd180b385aed7351b2d
   build: 0
 
 package:
@@ -13,11 +13,6 @@ package:
 source:
   url: https://github.com/hypre-space/${{ name }}/archive/v${{ version }}.tar.gz
   sha256: ${{ sha256 }}
-  patches:
-    # put hypre headers in include/hypre
-    # matches debian: https://sources.debian.org/src/hypre/2.32.0-4/debian/patches/configure.patch/
-    # see https://github.com/hypre-space/hypre/issues/898 for reason
-    - include-hypre.patch
 
 build:
   number: ${{ build }}

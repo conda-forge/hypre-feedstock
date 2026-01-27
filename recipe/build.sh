@@ -6,7 +6,6 @@ set -x
 export LDFLAGS="-L$PREFIX/lib -llapack -lblas $LDFLAGS"
 
 if [[ "$mpi" == "openmpi" ]]; then
-    export OPAL_PREFIX=$PREFIX
     export CC=mpicc
     export CXX=mpicxx
 fi
