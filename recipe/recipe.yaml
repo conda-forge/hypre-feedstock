@@ -4,7 +4,7 @@ context:
   name: hypre
   version: 3.1.0
   sha256: a6879ae9375d95c26afd97141d61e7a8092807333bf40cd180b385aed7351b2d
-  build: 0
+  build: 1
 
 package:
   name: ${{ name }}
