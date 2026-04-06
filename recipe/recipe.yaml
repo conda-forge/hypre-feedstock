@@ -37,11 +37,22 @@ requirements:
     - ${{ pin_subpackage("hypre", upper_bound="x.x") }}
 
 tests:
-  - package_contents:
-      lib:
-        - HYPRE
-      include:
-        - HYPRE.h
+  - if: unix
+    then:
+      package_contents:
+        lib:
+          - HYPRE
+        include:
+          - HYPRE.h
+  - if: win
+    then:
+      package_contents:
+        bin:
+          - HYPRE.dll
+        lib:
+          - HYPRE.lib
+        include:
+          - HYPRE.h
 
 about:
   license: Apache-2.0
