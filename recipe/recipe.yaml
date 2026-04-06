@@ -16,7 +16,6 @@ source:
 
 build:
   number: ${{ build }}
-  skip: win
 
 requirements:
   build:
@@ -24,7 +23,10 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('cxx') }}
-    - make
+    - if: win
+      then: ninja
+    - if: unix
+      then: make
     - if: build_platform != target_platform and mpi == "openmpi"
       then: ${{ mpi }}
   host:
@@ -35,11 +37,22 @@ requirements:
     - ${{ pin_subpackage("hypre", upper_bound="x.x") }}
 
 tests:
-  - package_contents:
-      lib:
-        - HYPRE
-      include:
-        - HYPRE.h
+  - if: unix
+    then:
+      package_contents:
+        lib:
+          - HYPRE
+        include:
+          - HYPRE.h
+  - if: win
+    then:
+      package_contents:
+        bin:
+          - HYPRE.dll
+        lib:
+          - HYPRE.lib
+        include:
+          - HYPRE.h
 
 about:
   license: Apache-2.0
